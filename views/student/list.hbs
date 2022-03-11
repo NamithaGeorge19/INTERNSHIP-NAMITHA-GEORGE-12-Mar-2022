@@ -1,0 +1,27 @@
+<h3><a class="btn btn-secondary" href="/student">Create New</a>Student List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Roll No</th>
+            <th>Phone No</th>
+            <th>ClassId</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.rollNo}}</td>
+            <td>{{this.phoneNo}}</td>
+            <td>{{this.classId}}</td>
+            <td>
+                <a href="/student/{{this._id}}" class="btn btn-sm btn-primary">Edit</a>
+                <a href="/student/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record?');"
+                    class="btn btn-sm btn-primary">Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
